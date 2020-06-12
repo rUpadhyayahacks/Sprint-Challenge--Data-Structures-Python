@@ -1,5 +1,7 @@
 import time
 
+from bst import BST
+
 start_time = time.time()
 
 f = open('names_1.txt', 'r')
@@ -13,10 +15,39 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+
+# root = BinarySearchTree(names_1[0])
+
+# for name in names_1:
+#     root.insert(name)
+
+# for name in names_2:
+#     if root.contains(name):
+#         duplicates.append(name)
+
+
+# Stretch
+
+# Using Ptyhon's sets
+# a set in Python is an unordered collection with no duplicates
+# sets have a "intersection" method to return unique elements found in both sets
+
+set_1 = set(names_1)
+set_2 = set(names_2)
+
+duplicates = set_1.intersection(set_2)
+
+
+
+
+
+
+
+
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
